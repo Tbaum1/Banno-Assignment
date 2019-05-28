@@ -15,19 +15,6 @@
   $strings = preg_split('/$\R?^/m', $bannoHTML); //splits using regex
   $twitterHandle;  //twitter handle variable
 
-  //Counts the number of png images in the array
-  function countPNGImage($strings){
-    $imgCount = 0;
-    //iterates through the $strings variable and looks for .png files then adds 1 to the $imgCount for each
-    foreach ($strings as $image) {
-      if (preg_match('/.png/', $image)) {
-        $imgCount += 1;
-      }
-    }
-
-  echo "\nThe number of .png images on the website is " . $imgCount . ".";  //display in terminal how many .png images found
-  }
-
   //counts the number of products Banno offers
   function countProducts($productsHTML){
     $numberOfProducts = 0; 
@@ -40,7 +27,20 @@
       }
     }    
     echo "Banno has " . $numberOfProducts  . " different products.";  //display how many products Banno offers
-  }  
+  } 
+
+  //Counts the number of png images in the array
+  function countPNGImage($strings){
+    $imgCount = 0;
+    //iterates through the $strings variable and looks for .png files then adds 1 to the $imgCount for each
+    foreach ($strings as $image) {
+      if (preg_match('/.png/', $image)) {
+        $imgCount += 1;
+      }
+    }
+
+  echo "\nThe number of .png images on the website is " . $imgCount . ".";  //display in terminal how many .png images found
+  }   
 
   //counts the 3 most common letters
   function countLetters($bannoHTML){    
