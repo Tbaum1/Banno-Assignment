@@ -31,10 +31,10 @@
   //counts the number of products Banno offers
   function countProducts($productsHTML){
     $numberOfProducts = 0; 
-    $products_array = preg_split('/$\R?^/m', $productsHTML);  //splits using regex    
+    $products = preg_split('/$\R?^/m', $productsHTML);  //splits using regex    
      
     //iterates through the $products_array and then adds 1 to the $numberOfProducts for each &trade found
-    foreach ($products_array as $product) {
+    foreach ($products as $product) {
       if (preg_match('/&trade;/', $product)) {
         $numberOfProducts += 1;
       }
